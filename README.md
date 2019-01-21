@@ -7,7 +7,7 @@ YOU NEED:
 - make tests
 - fork and adapt
 
-LICENSE : GPL V3
+LICENSE : MIT
 
 Place this app in **nextcloud/apps/**
 
