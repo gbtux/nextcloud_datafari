@@ -1,0 +1,53 @@
+#hello {
+	color: red;
+}
+.datafari select, .datafari button, .datafari input, .datafari textarea, .datafari div[contenteditable=true], .datafari div[contenteditable=false]{
+	 min-height: inherit;
+}
+#imput-datafari-search{
+	width: 80% !important;
+}
+.show-resume{
+	position: relative;
+	/*display: inline-block;
+	border-bottom: 1px dotted black;*/
+	text-transform: lowercase !important;
+}
+.show-resume .tooltiptext{
+	visibility: hidden;
+	width: 500px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	/* Position the tooltip text */
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -250px;
+
+	/* Fade in tooltip */
+	opacity: 0;
+	transition: opacity 0.3s;
+	word-wrap: break-word;
+	text-transform: lowercase;
+}
+
+.show-resume .tooltiptext::after{
+	content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.show-resume:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+  }

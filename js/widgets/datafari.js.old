@@ -1,0 +1,76 @@
+/** global: OCA */
+/** global: OC */
+/** global: net */
+
+
+(function () {
+
+	/**
+	 * @constructs Datafari
+	 */
+	var Datafari = function () {
+
+		var datafari = {
+
+			init: function () {
+                $('#btn-datafari-search').on('click', function(e){
+                    datafari.search()
+                });
+            },
+            
+            search: function() {
+                let term = $('#input-datafari').val();
+                window.location.href = "/nextcloud/index.php/apps/datafari/?search=" + term;
+                /*if(term.length){
+                    var request = {
+                        widget: 'datafari',
+                        request: 'search',
+                        value: term
+                    };
+    
+                    net.requestWidget(request, datafari.displayResults);
+                }else{
+                    alert('La chaine de recherche doit avoir 3 caractères minimum');
+                }*/
+            },
+
+            /*displayResults: function(result) {
+                let res = result.value.results
+                let resRetreated = res.replace(/^(nextcloud\()/,"").slice(0,-1);
+                let jsonResult = JSON.parse(resRetreated); console.log(jsonResult.response.docs);
+                let template = '';
+                if(jsonResult.response.docs.length === 0){
+                  template = '<p>Aucun résultat trouvé</p>';   
+                }
+                $.each(jsonResult.response.docs, function(index, doc){
+                    console.log(doc);
+                    template +='<div class="card horizontal">';
+                    template +='<div class="card-image">';
+                    template +='<img src="http://localhost/nextcloud/apps/datafari/img/widgets/extensions/' + doc.extension + '.svg" style="width:48px;height:48px;">';
+                    template += '</div>';
+                    template += '<div class="card-stacked"><div class="card-content">';
+                    template += '<span class="card-title grey-text text-darken-4">' + doc.title[0] + '</span>';
+                    template += '<p>' + doc.preview_content[0].slice(0, 100)+ '</p>';
+                    template += '</div>';
+                    template += '<div class="card-action">';
+                    template += '<a href="' + doc.url + '">Voir plus</a>';
+                    template += '</div></div></div>';
+                });
+                $('#div-datafari-results').html(template);
+                if(jsonResult.response.docs.length > 0){
+                    $('[data-widget-id="datafari"]').attr('data-gs-max-height',11).attr('data-gs-height',11).attr('style','overflow-y:scroll !important');
+                    $('[data-widget-id="datafari"] .widget-content').attr('style','overflow-y:scroll !important');
+                }else{
+                    
+                }
+            }*/
+
+		};
+
+		$.extend(Datafari.prototype, datafari);
+	};
+
+	OCA.DashBoard.Datafari = Datafari;
+	OCA.DashBoard.datafari = new Datafari();
+
+})();

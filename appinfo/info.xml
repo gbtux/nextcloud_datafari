@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>datafari</id>
+    <name>Datafari</name>
+    <summary>Datafari intégration for NextCloud</summary>
+    <description><![CDATA[Search with Datafari]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="gu.bordes@gmail.com" >Guillaume Bordes</author>
+    <namespace>Datafari</namespace>
+    <category>search</category>
+    <bugs>https://github.com/gbtux/nextcloud-datafari</bugs>
+    <dependencies>
+        <nextcloud min-version="14" max-version="15"/>
+    </dependencies>
+    <navigations>
+	    <navigation>
+            <name>Datafari</name>
+            <route>datafari.page.index</route>
+            <icon>widgets/logo_zebre.png</icon>
+	    </navigation>
+    </navigations>
+    <dashboard>
+	    <widget>OCA\Datafari\Widgets\DatafariWidget</widget>
+    </dashboard>
+    <settings>
+        <admin>OCA\Datafari\Settings\AdminSettings</admin>
+    </settings>
+</info>

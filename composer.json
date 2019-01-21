@@ -1,0 +1,15 @@
+{
+    "name": "Datafari",
+    "description": "Datafari intégration for NextCloud",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Guillaume Bordes"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
